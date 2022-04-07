@@ -1,7 +1,5 @@
 #pragma once
 
-// Assertion macros
-#include "Core/Assert.h"
 #include "Core/PlatformDetection.h"
 
 // Platform dependent debugbreak
@@ -14,3 +12,6 @@
 #else
     #define EP_DEBUGBREAK()
 #endif
+
+// Assertion macros
+#include "Core/Assert.h"

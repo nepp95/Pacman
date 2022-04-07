@@ -1,6 +1,6 @@
 #include "Core/Game.h"
 
-int main()
+int main(int argc, char *argv[])
 {
     // Create a game instance
     auto game = new Game();
