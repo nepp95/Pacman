@@ -19,5 +19,8 @@ public:
 
 private:
     SDL_Window* m_window;
-    SDL_Surface* m_surface;
+    SDL_Renderer* m_renderer;
+    SDL_Event m_event;
+
+    bool m_running = false;
 };

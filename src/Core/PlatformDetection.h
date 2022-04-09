@@ -15,11 +15,11 @@
         // MacOS
     #endif
 #elif defined(__linux__)
-    #error "Linux is not supported!"
+    #define PLATFORM_LINUX
 #endif
 
 // Supported platforms
-#if defined(PLATFORM_WINDOWS) || defined(PLATFORM_MACOS)
+#if defined(PLATFORM_WINDOWS) || defined(PLATFORM_MACOS) || defined(PLATFORM_LINUX)
     #define SUPPORTED_PLATFORM
 #endif
 
