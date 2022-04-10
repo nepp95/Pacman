@@ -1,6 +1,7 @@
 #include "Game.h"
 
 #include "Core/Base.h"
+#include "Renderer/Renderer.h"
 
 Game::Game()
 {
@@ -60,6 +61,8 @@ void Game::Render()
     SDL_RenderClear(m_renderer);
 
     // Render stuff
+    Renderer::RenderQuad();
+    //
 
     SDL_RenderPresent(m_renderer);
 }
