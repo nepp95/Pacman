@@ -15,6 +15,9 @@ Game::~Game()
     SDL_DestroyRenderer(m_renderer);
     SDL_DestroyWindow(m_window);
     SDL_Quit();
+
+    delete m_activeScene;
+    m_activeScene = nullptr;
 }
 
 bool Game::Init()
@@ -33,6 +36,9 @@ bool Game::Init()
     // Create renderer
     m_renderer = SDL_CreateRenderer(m_window, -1, SDL_RENDERER_ACCELERATED);
     CORE_ASSERT(m_renderer, "Failed to create renderer!");
+
+    // Create scene
+    m_activeScene = new Scene();
 
     return true;
 }
@@ -53,6 +59,8 @@ void Game::Update()
         if (m_event.type == SDL_QUIT)
             m_running = false;
     }
+
+    m_activeScene->Update();
 }
 
 void Game::Render()
@@ -61,7 +69,7 @@ void Game::Render()
     SDL_RenderClear(m_renderer);
 
     // Render stuff
-    Renderer::RenderQuad();
+    m_activeScene->Render();
     //
 
     SDL_RenderPresent(m_renderer);

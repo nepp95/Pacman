@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Core/Event.h"
+#include "Renderer/Scene.h"
 
 #include <SDL.h>
 
@@ -15,12 +15,13 @@ public:
 
     void Update();
     void Render();
-    // void HandleEvents(Event& e);
 
 private:
     SDL_Window* m_window;
     SDL_Renderer* m_renderer;
     SDL_Event m_event;
+
+    Scene* m_activeScene;
 
     bool m_running = false;
 };

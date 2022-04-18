@@ -16,7 +16,7 @@ void Renderer::Shutdown()
 
 void Renderer::RenderQuad()
 {
-    CORE_LOG("Renderer");
+    CORE_LOG("Renderer::RenderQuad");
 }
 
 void Renderer::StartBatch()
