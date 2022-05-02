@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Renderer/Renderer.h"
 #include "Renderer/Scene.h"
 
 #include <SDL.h>

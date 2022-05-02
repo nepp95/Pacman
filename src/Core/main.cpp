@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Core/Game.h"
 
 int main(int argc, char *argv[])

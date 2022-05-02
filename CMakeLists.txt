@@ -22,11 +22,12 @@ include_directories(${SDL2_INCLUDE_DIRS} ${GLM_INCLUDE_DIRS} "src" "vendor/entt/
 
 # Source files
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "src/*.cpp")
+file(GLOB_RECURSE VENDOR_SOURCES CONFIGURE_DEPENDS "vendor/*.cpp")
 
 # Define DEBUG
 add_compile_definitions(DEBUG)
 
 # Create executable
-add_executable(Pacman ${SOURCES})
+add_executable(Pacman ${SOURCES} ${VENDOR_SOURCES})
 target_link_libraries(Pacman ${SDL2_LIBRARIES})
 target_precompile_headers(Pacman PRIVATE "src/pch.h")

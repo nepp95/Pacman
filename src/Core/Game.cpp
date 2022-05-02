@@ -1,7 +1,10 @@
+#include "pch.h"
 #include "Game.h"
 
 #include "Core/Base.h"
+#include "Renderer/Entity.h"
 #include "Renderer/Renderer.h"
+#include "Renderer/Scene.h"
 
 Game::Game()
 {
@@ -39,6 +42,12 @@ bool Game::Init()
 
     // Create scene
     m_activeScene = new Scene();
+    for (int i = 0; i < 10; i++)
+    {
+        auto entity = m_activeScene->CreateEntity();
+        auto& src = entity.AddComponent<SpriteRendererComponent>();
+        src.Color = { 0.2f, 0.2f, 1.0f, 1.0f };
+    }
 
     return true;
 }

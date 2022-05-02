@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Core/UUID.h"
 #include "Renderer/Components.h"
 
 #include <entt.hpp>
@@ -13,6 +14,7 @@ public:
     ~Scene();
 
     Entity CreateEntity(const std::string& name = std::string());
+    Entity CreateEntityWithUUID(UUID uuid, const std::string& name = std::string());
 
     void DestroyEntity(Entity entity);
     void DuplicateEntity(Entity entity);
